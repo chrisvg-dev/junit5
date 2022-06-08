@@ -1,5 +1,7 @@
 package org.cvg.junit5_app.ejemplo.models;
 
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -8,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BancoTest {
 
+    @DisplayName("Test para validar transferencias entre cuentas")
     @Test
     void transferirDineroCuentas() {
         Cuenta cuenta = new Cuenta("Jhon Doe", new BigDecimal("2500"));
@@ -22,8 +25,11 @@ class BancoTest {
         );
     }
 
+    @DisplayName("Test para validar relacion banco - cuenta")
+    @Disabled
     @Test
     void testRelacionBancoCuentas() {
+        fail();
         Cuenta cuenta = new Cuenta("Jhon Doe", new BigDecimal("2500"));
         Cuenta cuenta2 = new Cuenta("Andres", new BigDecimal("1500.8989"));
 

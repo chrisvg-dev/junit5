@@ -17,7 +17,7 @@ class CuentaTest {
         this.cuenta = new Cuenta("CRISTHIAN VILLEGAS", new BigDecimal("1000.12345"));
     }
 
-    @DisplayName("Test para el nombre del propietario de la cuenta")
+    @DisplayName("Test para validar el nombre del propietario de la cuenta")
     @Test
     void testNombreCuenta() {
         //cuenta.setPersona("CRISTHIAN VILLEGAS");
@@ -44,6 +44,7 @@ class CuentaTest {
     /**
      * TDD
      */
+    @DisplayName("Test para validar si las cuentas son iguales")
     @Test
     void testReferenciaCuenta() {
         Cuenta cuenta = new Cuenta("Jhon Doe", new BigDecimal("8900.9997"));
@@ -53,6 +54,7 @@ class CuentaTest {
         assertEquals(cuenta, cuenta2, () -> "Las cuentas no son iguales");
     }
 
+    @DisplayName("Test para validar la funcion debito de la cuenta")
     @Test
     void testDebitoCuenta() {
         Cuenta cuenta = new Cuenta("CRISTHIAN", new BigDecimal("1000.12345"));
@@ -64,6 +66,7 @@ class CuentaTest {
         );
     }
 
+    @DisplayName("Test para validar la funcion credito de la cuenta")
     @Test
     void testCreditoCuenta() {
         Cuenta cuenta = new Cuenta("CRISTHIAN", new BigDecimal("1000.12345"));
@@ -75,6 +78,8 @@ class CuentaTest {
         );
     }
 
+
+    @DisplayName("Test para devolver una excepcion en caso de dinero insuficiente...")
     @Test
     void testDineroInsuficienteException() {
         Cuenta cuenta = new Cuenta("CRISTHIAN", new BigDecimal("1000.12345"));
