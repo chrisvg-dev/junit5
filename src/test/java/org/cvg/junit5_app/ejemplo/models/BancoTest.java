@@ -16,8 +16,10 @@ class BancoTest {
         Banco banco = new Banco();
         banco.setNombre("BBVA");
         banco.transferir(cuenta2, cuenta, new BigDecimal(500));
-        assertEquals("1000.8989", cuenta2.getSaldo().toPlainString());
-        assertEquals("3000", cuenta.getSaldo().toPlainString());
+        assertAll(
+                () -> assertEquals("1000.8989", cuenta2.getSaldo().toPlainString()),
+                () -> assertEquals("3000", cuenta.getSaldo().toPlainString())
+        );
     }
 
     @Test
@@ -31,17 +33,20 @@ class BancoTest {
         banco.setNombre("BBVA");
 
         banco.transferir(cuenta2, cuenta, new BigDecimal(500));
-        assertEquals("1000.8989", cuenta2.getSaldo().toPlainString());
-        assertEquals("3000", cuenta.getSaldo().toPlainString());
 
-        assertEquals(2, banco.getCuentas().size());
-        assertEquals("BBVA", cuenta.getBanco().getNombre());
+        assertAll(
+                () -> assertEquals("1000.8989", cuenta2.getSaldo().toPlainString(), () -> "El valor recibido no es igual al esperado..."),
+                () -> assertEquals("3000", cuenta.getSaldo().toPlainString(), () -> "El valor recibido no es igual al esperado..."),
 
-        assertEquals("Andres", banco.getCuentas().stream()
-                .filter( x -> x.getPersona().equals("Andres") )
-                .findFirst()
-                .get().getPersona());
-        assertTrue(banco.getCuentas().stream()
-                .anyMatch( x -> x.getPersona().equals("Andres") ));
+                () -> assertEquals(2, banco.getCuentas().size(), () -> "La cantidad de cuentas es menor a la esperada"),
+                () -> assertEquals("BBVA", cuenta.getBanco().getNombre(), () -> "El nombre del banco no coincide"),
+
+                () -> assertEquals("Andres", banco.getCuentas().stream()
+                        .filter( x -> x.getPersona().equals("Andres") )
+                        .findFirst()
+                        .get().getPersona(), () -> "No existen clientes con el nombre Andres"),
+                () -> assertTrue(banco.getCuentas().stream()
+                        .anyMatch( x -> x.getPersona().equals("Andres") ), () -> "No existen clientes con el nombre Andres")
+        );
     }
 }
