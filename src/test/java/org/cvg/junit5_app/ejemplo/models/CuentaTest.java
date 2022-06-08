@@ -4,8 +4,11 @@ import org.cvg.junit5_app.ejemplo.exceptions.InsuficientMoneyException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.*;
 
 import java.math.BigDecimal;
+import java.util.Map;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,6 +17,7 @@ class CuentaTest {
 
     @BeforeEach
     public void init() {
+        System.out.println("Iniciando método test");
         this.cuenta = new Cuenta("CRISTHIAN VILLEGAS", new BigDecimal("1000.12345"));
     }
 
@@ -89,5 +93,94 @@ class CuentaTest {
         String actual = exception.getMessage();
         String esperado = "Dinero insuficiente";
         assertEquals(esperado, actual);
+    }
+
+    /**
+     * VALIDATION TEST
+     */
+    @Test
+    @EnabledOnOs(OS.WINDOWS)
+    void testSoloWindows() {
+
+    }
+    @Test
+    @EnabledOnOs({OS.LINUX, OS.MAC})
+    void testSoloLinux() {
+
+    }
+
+    @Test
+    @DisabledOnOs(OS.WINDOWS)
+    void noWindows() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_8)
+    void soloJdk8() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    void enableOnJava15() {
+    }
+
+    @Test
+    void imprimirSystemProperties() {
+        Properties properties = System.getProperties();
+        properties.forEach( (key, val) -> System.out.println(key + ": " + val) );
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "java.version", matches = "1.8.0_111")
+    void testJavaVersion() {
+    }
+
+    @DisplayName("Ejecutar solo en entornos de 64 bits")
+    @Test
+    @DisabledIfSystemProperty(named = "os.arch", matches = ".*32.*")
+    void disableOn32Bits() {
+    }
+
+    @DisplayName("Ejecutar solo en entornos de 32 bits")
+    @Test
+    @DisabledIfSystemProperty(named = "os.arch", matches = ".*64.*")
+    void disableOn64Bits() {
+    }
+
+    @DisplayName("Ejecutar solo en sesiones de ciertos usuarios")
+    @Test
+    @EnabledIfSystemProperty(named = "user.name", matches = "crist")
+    void testUsername() {
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "ENV", matches = "dev")
+    void testDev() {
+    }
+
+    @Test
+    void imprimirVariablesAmbiente() {
+        Map<String, String> map = System.getenv();
+        map.forEach((k, v) -> System.out.println(k + ": " + v));
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "JAVA_HOME", matches = ".*jdk-17.0.2")
+    void testJavaHome() {
+    }
+
+    @Test
+    @DisplayName("Test para pc con 12 nucleos de procesamiento")
+    @EnabledIfEnvironmentVariable(named = "NUMBER_OF_PROCESSORS", matches = "12")
+    void testProcessors() {
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "ENVIRONMENT", matches = "dev")
+    void testEnv() {
+    }
+    @Test
+    @DisabledIfEnvironmentVariable(named = "ENVIRONMENT", matches = "prod")
+    void testDisabledEnv() {
     }
 }
