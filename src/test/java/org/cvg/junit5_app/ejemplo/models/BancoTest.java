@@ -25,10 +25,13 @@ class BancoTest {
     }
 
     @BeforeEach
-    void init() {
+    void init(TestInfo testInfo, TestReporter testReporter) {
         System.out.println("Init");
         cuenta = new Cuenta("Jhon Doe", new BigDecimal("2500"));
         cuenta2 = new Cuenta("Andres", new BigDecimal("1500.8989"));
+
+        System.out.println("Testinfo -> " + testInfo);
+        System.out.println("Testreporter -> " + testReporter);
     }
 
     @AfterEach
@@ -58,6 +61,8 @@ class BancoTest {
 
     @Nested
     @DisplayName("Nested class for bank test")
+    @Tag("banco")
+    @Tag("cuenta")
     class BackTest {
         @DisplayName("Test para validar transferencias entre cuentas")
         @Test

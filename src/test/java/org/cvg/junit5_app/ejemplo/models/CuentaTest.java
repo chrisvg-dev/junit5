@@ -1,13 +1,17 @@
 package org.cvg.junit5_app.ejemplo.models;
 
 import org.cvg.junit5_app.ejemplo.exceptions.InsuficientMoneyException;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -23,8 +27,84 @@ class CuentaTest {
         this.cuenta = new Cuenta("CRISTHIAN VILLEGAS", new BigDecimal("1000.12345"));
     }
 
+    /**
+     * PRUEBAS PARAMETRIZADAS
+     */
+    @Nested
+    @DisplayName("Pruebas parametrizadas")
+    @Tag("param")  // Etiquetar test, permite determinar si se ejecutan todos o algunos
+    class ParametricTestClass {
+        @DisplayName("Test para validar la funcion debito de la cuenta")
+        @ParameterizedTest(name = "Iteracion {index} ejecutando con valor {0}")
+        @ValueSource(strings = {"100", "200", "300", "500", "700", "900"})
+        void testDebitoCuenta(String monto) {
+            cuenta.debito(new BigDecimal(monto));
+            assertAll(
+                    () -> assertNotNull(cuenta.getSaldo(), () -> "El saldo no debe ser nulo"),
+                    () -> assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0, "El valor esperado no es igual al recibido")
+                    //() -> assertEquals("900.12345", cuenta.getSaldo().toPlainString(), () -> "El valor esperado no es igual al recibido")
+            );
+        }
+
+        @DisplayName("Test para validar la funcion debito de la cuenta")
+        @ParameterizedTest(name = "Iteracion {index} ejecutando con valor {0}")
+        @CsvSource({"1,100", "2,200", "3,300", "4,500", "5,700", "6,1000"})
+        void testDebitoCuentaCsv(String index, String monto) {
+            System.out.println("Evaluando " + index + " -> " + monto);
+            cuenta.debito(new BigDecimal(monto));
+            assertAll(
+                    () -> assertNotNull(cuenta.getSaldo(), () -> "El saldo no debe ser nulo"),
+                    () -> assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0, "El valor esperado no es igual al recibido")
+                    //() -> assertEquals("900.12345", cuenta.getSaldo().toPlainString(), () -> "El valor esperado no es igual al recibido")
+            );
+        }
+
+        @DisplayName("Test para validar la funcion debito de la cuenta")
+        @ParameterizedTest(name = "Iteracion {index} ejecutando con valor {0}")
+        @CsvSource({"150,100", "300,200", "400,300", "5001,500", "701,700", "1200,1000"})
+        void testDebitoCuentaCsv2(String saldo, String monto) {
+            System.out.println("Evaluando " + saldo + " -> " + monto);
+            cuenta.setSaldo(new BigDecimal(saldo));
+            cuenta.debito(new BigDecimal(monto));
+            assertAll(
+                    () -> assertNotNull(cuenta.getSaldo(), () -> "El saldo no debe ser nulo"),
+                    () -> assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0, "El valor esperado no es igual al recibido")
+                    //() -> assertEquals("900.12345", cuenta.getSaldo().toPlainString(), () -> "El valor esperado no es igual al recibido")
+            );
+        }
+
+        @DisplayName("Test para validar la funcion debito de la cuenta")
+        @ParameterizedTest(name = "Iteracion {index} ejecutando con valor {0}")
+        @CsvFileSource(resources = "/data.csv")
+        void testDebitoCuentaCsvFile(String monto) {
+            cuenta.debito(new BigDecimal(monto));
+            assertAll(
+                    () -> assertNotNull(cuenta.getSaldo(), () -> "El saldo no debe ser nulo"),
+                    () -> assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0, "El valor esperado no es igual al recibido")
+                    //() -> assertEquals("900.12345", cuenta.getSaldo().toPlainString(), () -> "El valor esperado no es igual al recibido")
+            );
+        }
+    }
+
+    @DisplayName("Test para validar la funcion debito de la cuenta")
+    @ParameterizedTest(name = "Iteracion {index} ejecutando con valor {0}")
+    @MethodSource("montoList")
+    void testDebitoCuentaMethodSource(String monto) {
+        cuenta.debito(new BigDecimal(monto));
+        assertAll(
+                () -> assertNotNull(cuenta.getSaldo(), () -> "El saldo no debe ser nulo"),
+                () -> assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0, "El valor esperado no es igual al recibido")
+                //() -> assertEquals("900.12345", cuenta.getSaldo().toPlainString(), () -> "El valor esperado no es igual al recibido")
+        );
+    }
+
+    static List<String> montoList() {
+        return Arrays.asList("100", "200", "300", "500", "700", "1000");
+    }
+
     @Nested
     @DisplayName("Nested class for bank account test")
+    @Tag("cuenta")
     class BankAccountTest {
         @DisplayName("Test para validar el nombre del propietario de la cuenta")
         @Test
@@ -90,6 +170,7 @@ class CuentaTest {
 
         @DisplayName("Test para devolver una excepcion en caso de dinero insuficiente...")
         @Test
+        @Tag("error")
         void testDineroInsuficienteException() {
             Cuenta cuenta = new Cuenta("CRISTHIAN", new BigDecimal("1000.12345"));
             Exception exception = assertThrows(InsuficientMoneyException.class, () -> {
