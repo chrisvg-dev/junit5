@@ -32,6 +32,7 @@ class BancoTest {
 
         System.out.println("Testinfo -> " + testInfo);
         System.out.println("Testreporter -> " + testReporter);
+        testReporter.publishEntry(testInfo.getDisplayName());
     }
 
     @AfterEach

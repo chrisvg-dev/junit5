@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="6.01" tests="58" errors="0" skipped="11" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Spring\junit\junit5_app\target\test-classes;D:\Spring\junit\junit5_app\target\classes;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="user.timezone" value="America/Mexico_City"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="MX"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.15\bin"/>
+    <property name="sun.java.command" value="C:\Users\CRISTH~1\AppData\Local\Temp\surefire16474305103327310636\surefirebooter4832452947533679823.jar C:\Users\CRISTHIAN VILLEGAS\AppData\Local\Temp\surefire16474305103327310636 2022-06-09T23-56-23_669-jvmRun1 surefire7725976980984453002tmp surefire_07362943903421426995tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Spring\junit\junit5_app\target\test-classes;D:\Spring\junit\junit5_app\target\classes;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\CRISTHIAN VILLEGAS\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\CRISTHIAN VILLEGAS"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-04-19"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.15"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Spring\junit\junit5_app"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\CRISTH~1\AppData\Local\Temp\surefire16474305103327310636\surefirebooter4832452947533679823.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.15+8-LTS-149"/>
+    <property name="user.name" value="CRISTHIAN VILLEGAS"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="localRepository" value="C:\Users\CRISTHIAN VILLEGAS\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\CRISTH~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="11.0.15"/>
+    <property name="user.dir" value="D:\Spring\junit\junit5_app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.15\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Java\jdk-11.0.15\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Kubernetes\Minikube;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\dependencies\mvn\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\CRISTHIAN VILLEGAS\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Azure Data Studio\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\bin;;C:\Users\CRISTHIAN VILLEGAS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\CRISTHIAN VILLEGAS\AppData\Roaming\npm;."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.15+8-LTS-149"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="testDebitoCuentaMethodSource{String}[1]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0.007"/>
+  <testcase name="testDebitoCuentaMethodSource{String}[2]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0.001"/>
+  <testcase name="testDebitoCuentaMethodSource{String}[3]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0"/>
+  <testcase name="testDebitoCuentaMethodSource{String}[4]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0"/>
+  <testcase name="testDebitoCuentaMethodSource{String}[5]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0"/>
+  <testcase name="testDebitoCuentaMethodSource{String}[6]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest" time="0.001"/>
+  <testcase name="pruebaTimeOut2" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$TimeOutTest" time="0.909"/>
+  <testcase name="testTimeOutAssert" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$TimeOutTest" time="4.008"/>
+  <testcase name="pruebaTimeOut" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$TimeOutTest" time="1.003"/>
+  <testcase name="testSaldoCuentaDev" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$AssumptionsTests" time="0">
+    <skipped message="Assumption failed: assumption is not true" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
+	at org.cvg.junit5_app.ejemplo.models.CuentaTest$AssumptionsTests.testSaldoCuentaDev(CuentaTest.java:304)
+</skipped>
+    <system-out><![CDATA[Iniciando método test
+]]></system-out>
+  </testcase>
+  <testcase name="testSaldoCuentaDev2" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$AssumptionsTests" time="0"/>
+  <testcase name="testEnv" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$EnvironmentVariables" time="0">
+    <skipped message="Environment variable [ENVIRONMENT] does not exist"/>
+  </testcase>
+  <testcase name="testProcessors" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$EnvironmentVariables" time="0"/>
+  <testcase name="testJavaHome" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$EnvironmentVariables" time="0">
+    <skipped message="Environment variable [JAVA_HOME] with value [C:\Program Files\Java\jdk-11.0.15] does not match regular expression [.*jdk-17.0.2]"/>
+  </testcase>
+  <testcase name="testDisabledEnv" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$EnvironmentVariables" time="0.001"/>
+  <testcase name="imprimirVariablesAmbiente" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$EnvironmentVariables" time="0.023"/>
+  <testcase name="disableOn64Bits" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$SystemPropertiesTest" time="0">
+    <skipped message="System property [os.arch] with value [amd64] matches regular expression [.*64.*]"/>
+  </testcase>
+  <testcase name="testDev" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$SystemPropertiesTest" time="0">
+    <skipped message="System property [ENV] does not exist"/>
+  </testcase>
+  <testcase name="testUsername" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$SystemPropertiesTest" time="0">
+    <skipped message="System property [user.name] with value [CRISTHIAN VILLEGAS] does not match regular expression [crist]"/>
+  </testcase>
+  <testcase name="disableOn32Bits" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$SystemPropertiesTest" time="0"/>
+  <testcase name="testJavaVersion" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$JavaVersionTest" time="0">
+    <skipped message="System property [java.version] with value [11.0.15] does not match regular expression [1.8.0_111]"/>
+  </testcase>
+  <testcase name="soloJdk8" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$JavaVersionTest" time="0">
+    <skipped message="Disabled on JRE version: 11.0.15"/>
+  </testcase>
+  <testcase name="imprimirSystemProperties" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$JavaVersionTest" time="0.022"/>
+  <testcase name="enableOnJava15" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$JavaVersionTest" time="0">
+    <skipped message="Disabled on JRE version: 11.0.15"/>
+  </testcase>
+  <testcase name="testSoloLinux" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$OperatingSystemTest" time="0">
+    <skipped message="Disabled on operating system: Windows 11"/>
+  </testcase>
+  <testcase name="testSoloWindows" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$OperatingSystemTest" time="0"/>
+  <testcase name="noWindows" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$OperatingSystemTest" time="0">
+    <skipped message="Disabled on operating system: Windows 11"/>
+  </testcase>
+  <testcase name="testCreditoCuenta" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testDebitoCuenta" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testSaldoCuenta" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testReferenciaCuenta" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testDineroInsuficienteException" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testNombreCuenta" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$BankAccountTest" time="0"/>
+  <testcase name="testDebitoCuenta{String}[1]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuenta{String}[2]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuenta{String}[3]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuenta{String}[4]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuenta{String}[5]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuenta{String}[6]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[1]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[2]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[3]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.003"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[4]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[5]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsv2{String, String}[6]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.002"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[1]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[2]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[3]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[4]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[5]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsv{String, String}[6]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[1]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[2]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[3]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[4]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0.001"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[5]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[6]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+  <testcase name="testDebitoCuentaCsvFile{String}[7]" classname="org.cvg.junit5_app.ejemplo.models.CuentaTest$ParametricTestClass" time="0"/>
+</testsuite>

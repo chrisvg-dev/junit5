@@ -8,6 +8,22 @@
     <artifactId>junit5_app</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <!--  PERMITE EJECUTAR LAS PRUEBAS UNITARIAS DESDE CONSOLA -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+<!--                <configuration>-->
+<!--                    <groups>cuenta</groups>-->
+<!--                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+    <!--  PERMITE EJECUTAR LAS PRUEBAS UNITARIAS DESDE CONSOLA -->
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -24,6 +40,10 @@
             <version>1.18.22</version>
             <scope>compile</scope>
         </dependency>
+
+
+
+        <!--   SURFIRE PARA REALIZAR LOS TEST DESDE CONSOLA -->
     </dependencies>
 
 

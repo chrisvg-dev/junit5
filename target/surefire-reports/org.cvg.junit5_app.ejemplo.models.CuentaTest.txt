@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.cvg.junit5_app.ejemplo.models.CuentaTest
+-------------------------------------------------------------------------------
+Tests run: 58, Failures: 0, Errors: 0, Skipped: 11, Time elapsed: 6.01 s - in org.cvg.junit5_app.ejemplo.models.CuentaTest
